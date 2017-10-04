@@ -18,3 +18,16 @@
 0.00796402 seconds
 0.00904551 seconds
 0.00892269 seconds
+0.0299775 seconds
+0.0123705 seconds
+0.0116504 seconds
+0.0140411 seconds
+0.0164799 seconds
+0.0110932 seconds
+0.0121434 seconds
+0.0158234 seconds
+0.00979165 seconds
+0.012332 seconds
+0.0129689 seconds
+0.00861007 seconds
+0.0105808 seconds

@@ -69,7 +69,7 @@ int main(int argn, char ** argv){
 	populateMatrix(a, stoi(argv[1]), "A");
 	populateMatrix(b, stoi(argv[1]), "B");
 
-	c = a * b;
+	c = a*b;
 	populateOutputFile(c);
 
 	steady_clock::time_point end = steady_clock::now();
