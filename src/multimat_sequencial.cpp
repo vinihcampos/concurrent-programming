@@ -13,7 +13,7 @@ using namespace concurrent_programming;
 
 void populateMatrix(Matrix<int> & a, const int dimension, const string character){
 	ifstream file;
-	file.open("input/" + character + to_string(dimension) + "x" + to_string(dimension) + ".txt", ios::out);
+	file.open("../input/" + character + to_string(dimension) + "x" + to_string(dimension) + ".txt", ios::out);
 	
 	string line;
 	int value;
@@ -35,7 +35,7 @@ void populateMatrix(Matrix<int> & a, const int dimension, const string character
 
 void populateOutputFile(Matrix<int> & a){
 	ofstream file;
-	file.open("output/C" + to_string(a.length()) + "x" + to_string(a.length()) + ".txt");
+	file.open("../output/matrices_results/C" + to_string(a.length()) + "x" + to_string(a.length()) + ".txt");
 
 	if(file.is_open()){
 		file << a.length() << " " << a.length() << endl;
@@ -45,9 +45,9 @@ void populateOutputFile(Matrix<int> & a){
 	file.close();	
 }
 
-void populateTimeFile(const duration<double> & time_elapsed, const int & dimension){
+void populateTimeFile(const duration<double> & time_elapsed, const int & dimension, const int n_threads = 1){
 	ofstream file;
-	file.open("time_files/" + to_string(dimension) + "x" + to_string(dimension) + ".txt", ios::app);
+	file.open("../output/time_files_sequential/" + to_string(dimension) + "x" + to_string(dimension) + "_" + to_string(n_threads) + ".txt", ios::app);
 
 	if(file.is_open()){
 		file << time_elapsed.count() << " seconds"<< endl;

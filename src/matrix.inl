@@ -102,6 +102,10 @@ concurrent_programming::Matrix<T> concurrent_programming::Matrix<T>::multiply(co
 		throw std::logic_error("The matrices do not have the same dimension!");
 	}
 
+	if(n_threads > size * size){
+		n_threads = size * size;
+	}
+
 	Matrix<T> c(size, n_threads);
 	int division_size = ceil((size * size * 1.0)/n_threads);
 	
