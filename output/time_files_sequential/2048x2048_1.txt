@@ -18,4 +18,3 @@
 221.432 seconds
 221.563 seconds
 221.327 seconds
-27.2792 seconds
