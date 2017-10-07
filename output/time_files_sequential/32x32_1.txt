@@ -41,3 +41,5 @@
 0.00460372 seconds
 0.00643027 seconds
 0.00213111 seconds
+0.00596586 seconds
+0.00632959 seconds

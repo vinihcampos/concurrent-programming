@@ -11,7 +11,7 @@ namespace concurrent_programming{
 			T ** data;
 			int size = 0;
 			int n_threads = 0;
-			void auxiliarMultiply(Matrix<T> & result, const Matrix<T> & a, const int x0, const int y0, const int x1, const int y1);
+			void auxiliarMultiply(Matrix<T> & result, const Matrix<T> & a, const int x0, const int x1);
 
 		public:
 
@@ -24,8 +24,6 @@ namespace concurrent_programming{
 			int length() const;
 			bool isEmpty();
 			Matrix<T> multiply(const Matrix<T> & a);
-
-			Matrix<T> strassen(const Matrix<T> & matrix);
 
 			T *& operator[](const int & i);
 			T * operator[](const int & i) const;

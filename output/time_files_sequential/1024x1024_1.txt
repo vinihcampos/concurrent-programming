@@ -18,15 +18,3 @@
 24.4757 seconds
 24.2211 seconds
 24.2198 seconds
-57.6856 seconds
-23.703 seconds
-25.6946 seconds
-24.8373 seconds
-23.703 seconds
-33.5865 seconds
-37.3419 seconds
-25.2912 seconds
-35.6787 seconds
-37.6707 seconds
-23.7033 seconds
-3.71897 seconds

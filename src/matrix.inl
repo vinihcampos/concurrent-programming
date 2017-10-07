@@ -84,15 +84,21 @@ bool concurrent_programming::Matrix<T>::isEmpty(){
 }
 
 template<typename T>
-void concurrent_programming::Matrix<T>::auxiliarMultiply(Matrix<T> & result, const Matrix<T> & a, const int x0, const int y0, const int x1, const int y1){
+void concurrent_programming::Matrix<T>::auxiliarMultiply(Matrix<T> & result, const Matrix<T> & a, const int x0, const int x1){
 	
 	for(int i = x0; i <= x1; ++i){
-		for(int j = y0; j <= y1; ++j){
-			for(int k = 0; k < result.length(); ++k){
-				result[i][j] += data[i][k] * a[k][j];
-			}
+		int row = i / size;
+		int col = i % size;
+		for(int k = 0; k < result.length(); ++k){
+			result[row][col] += data[row][k] * a[k][col];
 		}
 	}
+
+	/*for(int i = x0; i <= x1; ++i){
+		for(int j = y0; j <= y1; ++j){
+			
+		}
+	}*/
 	
 }
 
@@ -117,22 +123,26 @@ concurrent_programming::Matrix<T> concurrent_programming::Matrix<T>::multiply(co
 	std::thread threads[n_threads];
 	int x = 0;
 	for(int i = division_size - 1; i < size * size; i += division_size){
-		if(i + division_size >= size * size){
-			x1 = size - 1;
-			y1 = size - 1;
-			threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0, y0, x1, y1);
+
+		x1 = i / size;			
+		y1 = i % size;
+		
+		threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0 * size + y0, x1 * size + y1);
+		y1++;
+		
+		if(y1 % size == 0){
+			x0 = x1 + 1;
+			y0 = 0;
 		}else{
-			y1 = i % size;
-			x1 = i / size;			
-			threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0, y0, x1, y1);
-			y1++;
-			if(y1 % size == 0){
-				x0 = x1 + 1;
-				y0 = 0;
-			}else{
-				x0 = x1;
-				y0 = y1;
-			}
+			x0 = x1;
+			y0 = y1;
+		}
+
+		if(i + division_size > size * size && i != size * size - 1){
+			x1 = size - 1;
+			y1 = size - 1;			
+			
+			threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0 * size + y0, x1 * size + y1);
 		}
 	}
 

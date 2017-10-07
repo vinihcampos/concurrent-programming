@@ -7,7 +7,7 @@ include_directories(include)
 
 set (CMAKE_CXX_STANDARD 11)
 set (CMAKE_CXX_FLAGS_DISTRIBUTION "-O3")
-SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../bin)
 
 file(GLOB SRC_SEQ "src/multimat_sequencial.cpp")
