@@ -93,12 +93,6 @@ void concurrent_programming::Matrix<T>::auxiliarMultiply(Matrix<T> & result, con
 			result[row][col] += data[row][k] * a[k][col];
 		}
 	}
-
-	/*for(int i = x0; i <= x1; ++i){
-		for(int j = y0; j <= y1; ++j){
-			
-		}
-	}*/
 	
 }
 
@@ -113,6 +107,8 @@ concurrent_programming::Matrix<T> concurrent_programming::Matrix<T>::multiply(co
 	}
 
 	Matrix<T> c(size, n_threads);
+
+	//Defines the number of multiplications of each thread
 	int division_size = ceil((size * size * 1.0)/n_threads);
 	
 	int x0 = 0;
@@ -127,6 +123,8 @@ concurrent_programming::Matrix<T> concurrent_programming::Matrix<T>::multiply(co
 		x1 = i / size;			
 		y1 = i % size;
 		
+		//	Start the thread with a starter and end point in vector
+		//	Here is needed to transform the point in matrix to a point in array
 		threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0 * size + y0, x1 * size + y1);
 		y1++;
 		
@@ -142,10 +140,13 @@ concurrent_programming::Matrix<T> concurrent_programming::Matrix<T>::multiply(co
 			x1 = size - 1;
 			y1 = size - 1;			
 			
+			//	Start the last thread. Always the last thread will run at maximum division_size multiplications
+			//	Here is needed to transform the point in matrix to a point in array
 			threads[x++] = std::thread(&concurrent_programming::Matrix<T>::auxiliarMultiply, this, std::ref(c), std::ref(a), x0 * size + y0, x1 * size + y1);
 		}
 	}
 
+	// Inform to wait for other threads
 	for(int i = 0; i < x; ++i){
 		threads[i].join();
 	}
