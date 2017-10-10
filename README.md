@@ -15,6 +15,7 @@ sudo apt-get install cmake
 ### Installing
 
 ```
+mkdir -p build
 cd build
 cmake ..
 make
