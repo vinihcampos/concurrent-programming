@@ -1,4 +1,4 @@
-# Practice with threads
+# Synchronization in concurrent programs
 
 This work solves the unisex bathroom problem.  
 
