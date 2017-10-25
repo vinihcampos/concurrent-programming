@@ -12,13 +12,13 @@ public class JobIn extends Thread{
 	private Integer timeLimit;
 	private Thread jobOut;
 	
-	public JobIn(BathroomManager baManager, Integer timeLimit) {
+	public JobIn(BathroomManager bathroomManager, Integer timeLimit) {
 		super();
-		this.baManager = baManager;
+		this.baManager = bathroomManager;
 		this.id = 0;
 		this.timeLimit = timeLimit;
 		this.randomGenerator = new Random();
-		this.jobOut = new JobOut(baManager);
+		this.jobOut = new JobOut(bathroomManager);
 	}
 	
 	@Override

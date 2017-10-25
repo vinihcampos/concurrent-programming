@@ -3,10 +3,10 @@ package view;
 import java.util.Scanner;
 
 import controller.BathroomManager;
-import model.Person;
+import controller.BathroomManagerSemaphore;
 import thread.JobIn;
 
-public class Main {
+public class MainSemaphore {
 	public static void main(String args[]){
 		BathroomManager bathroomManager;
 		Thread jobIn;
@@ -23,7 +23,7 @@ public class Main {
 		
 		sc.close();
 		
-		bathroomManager = new BathroomManager(maxCapacity);
+		bathroomManager = new BathroomManagerSemaphore(maxCapacity);
 		jobIn = new JobIn(bathroomManager, timeLimit);
 		jobIn.start();		
 	}
