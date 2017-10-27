@@ -13,8 +13,8 @@ After installed, import this project into your *workspace*.
 
 Inside **view** package, there are two *main* files, where:
 
-* **MainSemaphore.java**: Executes the solution of unisex bathroom problem with *monitors*;
-* **MainMonitors.java**: Executes the solution of unisex bathroom problem with *semaphores*.
+* **MainSemaphore.java**: Executes the solution of unisex bathroom problem with *semaphores*;
+* **MainMonitors.java**: Executes the solution of unisex bathroom problem with *monitors*.
 
 So, to testing each solution, you need execute one of the files, above.
 Also, when the program starts, it's needed to inform the capacity of the bathroom and the time limit of each person can stay there. 
