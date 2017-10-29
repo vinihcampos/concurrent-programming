@@ -1,4 +1,4 @@
-package util;
+package business.util;
 
 import model.Person;
 

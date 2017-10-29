@@ -1,12 +1,12 @@
-package controller;
+package business.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.Semaphore;
 
+import business.util.Log;
 import model.Person;
-import util.Log;
 
 public class BathroomManagerSemaphore implements BathroomManager{
 	private Semaphore semaphore;

@@ -1,18 +1,18 @@
-package controller;
+package business.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import business.util.Log;
 import model.Person;
-import util.Log;
 
 public class BathroomManagerMonitor implements BathroomManager{
 
-	private Integer capacity;
-	private List<Person> insidePeople;
-	private List<Person> waitingPeople;
-	private Integer timeElapsed;
+	private volatile Integer capacity;
+	private volatile List<Person> insidePeople;
+	private volatile List<Person> waitingPeople;
+	private volatile Integer timeElapsed;
 	
 	public BathroomManagerMonitor(Integer capacity) {
 		this.capacity = capacity;

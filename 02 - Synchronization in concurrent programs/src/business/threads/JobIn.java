@@ -1,8 +1,8 @@
-package thread;
+package business.threads;
 
 import java.util.Random;
 
-import controller.BathroomManager;
+import business.controller.BathroomManager;
 import model.Person;
 
 public class JobIn extends Thread{

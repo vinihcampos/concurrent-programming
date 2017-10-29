@@ -2,9 +2,9 @@ package view;
 
 import java.util.Scanner;
 
-import controller.BathroomManager;
-import controller.BathroomManagerMonitor;
-import thread.JobIn;
+import business.controller.BathroomManager;
+import business.controller.BathroomManagerMonitor;
+import business.threads.JobIn;
 
 public class MainMonitor {
 	public static void main(String args[]) {

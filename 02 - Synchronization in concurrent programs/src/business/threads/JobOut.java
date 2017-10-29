@@ -1,7 +1,7 @@
-package thread;
+package business.threads;
 
-import controller.BathroomManager;
-import controller.BathroomManagerSemaphore;
+import business.controller.BathroomManager;
+import business.controller.BathroomManagerSemaphore;
 
 public class JobOut extends Thread{
 	private BathroomManager baManager;

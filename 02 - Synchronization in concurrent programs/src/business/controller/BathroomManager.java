@@ -1,4 +1,4 @@
-package controller;
+package business.controller;
 
 import model.Person;
 

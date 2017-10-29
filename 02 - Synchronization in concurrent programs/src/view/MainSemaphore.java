@@ -2,9 +2,9 @@ package view;
 
 import java.util.Scanner;
 
-import controller.BathroomManager;
-import controller.BathroomManagerSemaphore;
-import thread.JobIn;
+import business.controller.BathroomManager;
+import business.controller.BathroomManagerSemaphore;
+import business.threads.JobIn;
 
 public class MainSemaphore {
 	public static void main(String args[]){
