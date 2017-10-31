@@ -13,12 +13,14 @@ public class BathroomManagerMonitor implements BathroomManager{
 	private volatile List<Person> insidePeople;
 	private volatile List<Person> waitingPeople;
 	private volatile Integer timeElapsed;
+	private volatile Integer outsideTimeElapsed;
 	
 	public BathroomManagerMonitor(Integer capacity) {
 		this.capacity = capacity;
 		this.insidePeople = new ArrayList<>();
 		this.waitingPeople = new ArrayList<>();
 		this.timeElapsed = 0;
+		this.outsideTimeElapsed = 0;
 	}
 	
 	@Override
@@ -35,13 +37,13 @@ public class BathroomManagerMonitor implements BathroomManager{
 	public synchronized void add(Person p) {
 		if(insidePeople.isEmpty()) {
 			insidePeople.add(p);
-			Log.entrance(p, insidePeople.size(), timeElapsed);
+			Log.entrance(p, insidePeople.size(), Math.max(timeElapsed, outsideTimeElapsed));
 			Collections.sort(insidePeople);
 		}else {
 			if(insidePeople.get(0).getGender() == p.getGender() && 
 			   insidePeople.size() < capacity && waitingPeople.isEmpty()) {
 				insidePeople.add(p);
-				Log.entrance(p, insidePeople.size(), timeElapsed);
+				Log.entrance(p, insidePeople.size(), Math.max(timeElapsed, outsideTimeElapsed));
 				Collections.sort(insidePeople);
 			}else {
 				waitingPeople.add(p);
@@ -54,10 +56,11 @@ public class BathroomManagerMonitor implements BathroomManager{
 	public synchronized void remove() {
 		if(!insidePeople.isEmpty()) {
 			Integer time = insidePeople.get(0).getTime();
+			outsideTimeElapsed += time;
 			Person auxP;
 			while(!insidePeople.isEmpty() && insidePeople.get(0).getTime() == time) {
 				auxP = insidePeople.remove(0);
-				Log.exit(auxP, insidePeople.size(),timeElapsed);					
+				Log.exit(auxP, insidePeople.size(),outsideTimeElapsed);					
 			}
 			
 			for(int i = 0; i < insidePeople.size(); ++i) {
@@ -73,7 +76,7 @@ public class BathroomManagerMonitor implements BathroomManager{
 					  insidePeople.size() < capacity) {
 					insidePeople.add(waitingPeople.get(0));
 					auxP = waitingPeople.remove(0);
-					Log.entrance(auxP, insidePeople.size(),timeElapsed);
+					Log.entrance(auxP, insidePeople.size(),outsideTimeElapsed);
 				}
 				Collections.sort(insidePeople);
 			}

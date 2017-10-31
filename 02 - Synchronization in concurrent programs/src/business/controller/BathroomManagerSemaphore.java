@@ -14,6 +14,7 @@ public class BathroomManagerSemaphore implements BathroomManager{
 	private List<Person> insidePeople;
 	private List<Person> waitingPeople;
 	private Integer timeElapsed;
+	private Integer outsideTimeElapsed;
 	
 	public BathroomManagerSemaphore(Integer capacity) {
 		this.semaphore = new Semaphore(1, true);
@@ -21,6 +22,7 @@ public class BathroomManagerSemaphore implements BathroomManager{
 		this.insidePeople = new ArrayList<>();
 		this.waitingPeople = new ArrayList<>();
 		this.timeElapsed = 0;
+		this.outsideTimeElapsed = 0;
 	}
 	
 	@Override
@@ -58,13 +60,13 @@ public class BathroomManagerSemaphore implements BathroomManager{
 			semaphore.acquire();
 			if(insidePeople.isEmpty()) {
 				insidePeople.add(p);
-				Log.entrance(p, insidePeople.size(), timeElapsed);
+				Log.entrance(p, insidePeople.size(), Math.max(timeElapsed, outsideTimeElapsed));
 				Collections.sort(insidePeople);
 			}else {
 				if(insidePeople.get(0).getGender() == p.getGender() && 
 				   insidePeople.size() < capacity && waitingPeople.isEmpty()) {
 					insidePeople.add(p);
-					Log.entrance(p, insidePeople.size(), timeElapsed);
+					Log.entrance(p, insidePeople.size(), Math.max(timeElapsed, outsideTimeElapsed));
 					Collections.sort(insidePeople);
 				}else {
 					waitingPeople.add(p);
@@ -84,10 +86,11 @@ public class BathroomManagerSemaphore implements BathroomManager{
 			semaphore.acquire();
 			if(!insidePeople.isEmpty()) {
 				Integer time = insidePeople.get(0).getTime();
+				outsideTimeElapsed += time;
 				Person auxP;
 				while(!insidePeople.isEmpty() && insidePeople.get(0).getTime() == time) {
 					auxP = insidePeople.remove(0);
-					Log.exit(auxP, insidePeople.size(),timeElapsed);					
+					Log.exit(auxP, insidePeople.size(),outsideTimeElapsed);					
 				}
 				
 				for(int i = 0; i < insidePeople.size(); ++i) {
@@ -103,7 +106,7 @@ public class BathroomManagerSemaphore implements BathroomManager{
 						  insidePeople.size() < capacity) {
 						insidePeople.add(waitingPeople.get(0));
 						auxP = waitingPeople.remove(0);
-						Log.entrance(auxP, insidePeople.size(),timeElapsed);
+						Log.entrance(auxP, insidePeople.size(),outsideTimeElapsed);
 					}
 					Collections.sort(insidePeople);
 				}

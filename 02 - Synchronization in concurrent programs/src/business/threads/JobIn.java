@@ -10,20 +10,23 @@ public class JobIn extends Thread{
 	private Integer id;
 	private Random randomGenerator;
 	private Integer timeLimit;
+	private Integer maxFlow;
 	private Thread jobOut;
 	
-	public JobIn(BathroomManager bathroomManager, Integer timeLimit) {
+	public JobIn(BathroomManager bathroomManager, Integer timeLimit, Integer maxFlow) {
 		super();
 		this.baManager = bathroomManager;
-		this.id = 0;
+		this.id = 1;
 		this.timeLimit = timeLimit;
 		this.randomGenerator = new Random();
 		this.jobOut = new JobOut(bathroomManager);
+		this.maxFlow = maxFlow;
 	}
 	
 	@Override
 	public void run() {
-		while(true) {
+		while(maxFlow > 0) {
+			maxFlow--;
 			try {
 				if(baManager.isEmpty()) {
 					baManager.add(generatePerson());
@@ -36,6 +39,14 @@ public class JobIn extends Thread{
 					baManager.add(generatePerson());
 				}
 				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if(jobOut.isAlive()) {
+			try {
+				jobOut.join();
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

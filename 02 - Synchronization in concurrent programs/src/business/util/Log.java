@@ -6,7 +6,7 @@ public class Log {
 	
 	public static void entrance(Person p, Integer amount, Integer timeElapsed) {
 		System.out.println("Time: " + timeElapsed + "s.");
-		System.out.println("The " + p + " entered into bathroom.");
+		System.out.println("The " + p + " entered into bathroom and will stay for " + p.getTime() + "s.");
 		printAmountOfPeople(amount);
 		System.out.println("---------------------------");
 	}
