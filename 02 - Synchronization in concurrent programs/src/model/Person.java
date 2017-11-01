@@ -3,6 +3,7 @@ package model;
 public class Person implements Comparable<Person>{
 	private Integer id;
 	private Boolean gender;
+	private Integer enterTime;
 	private Integer time;
 	
 	public Person(Integer id, Boolean gender, Integer time) {
@@ -22,7 +23,14 @@ public class Person implements Comparable<Person>{
 	}
 	public void setGender(Boolean gender) {
 		this.gender = gender;
-	}	
+	}
+	public Integer getEnterTime() {
+		return enterTime;
+	}
+	public void setEnterTime(Integer enterTime) {
+		this.enterTime = enterTime;
+	}
+
 	public Integer getTime() {
 		return time;
 	}
@@ -41,6 +49,6 @@ public class Person implements Comparable<Person>{
 
 	@Override
 	public int compareTo(Person o) {
-		return this.time - o.getTime();
+		return (this.enterTime + this.time)  - (o.getEnterTime() + o.getTime());
 	}
 }

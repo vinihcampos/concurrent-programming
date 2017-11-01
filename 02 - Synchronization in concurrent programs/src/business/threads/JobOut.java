@@ -14,7 +14,7 @@ public class JobOut extends Thread{
 	public void run() {
 		try {
 			while(!baManager.isEmpty()) {
-				Thread.sleep(baManager.getTimeSleep() * 1000);
+				Thread.sleep(1000);
 				baManager.remove();
 			}
 		} catch (Exception e) {
