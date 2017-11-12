@@ -12,6 +12,10 @@ This project analyzes the processing time of sequential and parallel algorithms 
 
 This project solves the unisex bathroom problem. 
 
+### [03 - Concurrent programming in Go](03%20-%20Concurrent%20programming%20in%20Go)
+
+This project solves the *lanhouse* problem in Go. 
+
 ## Author
 
 [![Vinicius Campos](https://avatars.githubusercontent.com/Vinihcampos?s=100)<br /><sub>Vinicius Campos</sub>](http://lattes.cnpq.br/4806707968253342)<br />[👀](https://github.com/vinihcampos/concurrent-programming/commits?author=Vinihcampos)

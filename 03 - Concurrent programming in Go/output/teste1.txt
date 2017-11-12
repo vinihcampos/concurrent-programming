@@ -1,0 +1,72 @@
+Adolescente #X. está on-line
+Adolescente #D. está on-line
+Adolescente #A. está on-line
+Adolescente #T. está on-line
+Adolescente #F. está on-line
+Adolescente #M. está on-line
+Adolescente #Y. está on-line
+Adolescente #H. está on-line
+Adolescente #I. está aguardando
+Adolescente #Z. está aguardando
+Adolescente #O. está aguardando
+Adolescente #G. está aguardando
+Adolescente #W. está aguardando
+Adolescente #L. está aguardando
+Adolescente #Q. está aguardando
+Adolescente #V. está aguardando
+Adolescente #C. está aguardando
+Adolescente #U. está aguardando
+Adolescente #S. está aguardando
+Adolescente #E. está aguardando
+Adolescente #J. está aguardando
+Adolescente #N. está aguardando
+Adolescente #K. está aguardando
+Adolescente #R. está aguardando
+Adolescente #P. está aguardando
+Adolescente #B. está aguardando
+Adolescente #T. liberou a máquina após passar 16 minutos on-line
+Adolescente #I. está on-line
+Adolescente #M. liberou a máquina após passar 19 minutos on-line
+Adolescente #Z. está on-line
+Adolescente #F. liberou a máquina após passar 38 minutos on-line
+Adolescente #O. está on-line
+Adolescente #H. liberou a máquina após passar 56 minutos on-line
+Adolescente #G. está on-line
+Adolescente #D. liberou a máquina após passar 61 minutos on-line
+Adolescente #W. está on-line
+Adolescente #X. liberou a máquina após passar 60 minutos on-line
+Adolescente #L. está on-line
+Adolescente #I. liberou a máquina após passar 52 minutos on-line
+Adolescente #Q. está on-line
+Adolescente #Y. liberou a máquina após passar 75 minutos on-line
+Adolescente #V. está on-line
+Adolescente #L. liberou a máquina após passar 18 minutos on-line
+Adolescente #C. está on-line
+Adolescente #W. liberou a máquina após passar 20 minutos on-line
+Adolescente #U. está on-line
+Adolescente #G. liberou a máquina após passar 34 minutos on-line
+Adolescente #S. está on-line
+Adolescente #O. liberou a máquina após passar 59 minutos on-line
+Adolescente #E. está on-line
+Adolescente #A. liberou a máquina após passar 105 minutos on-line
+Adolescente #J. está on-line
+Adolescente #S. liberou a máquina após passar 18 minutos on-line
+Adolescente #N. está on-line
+Adolescente #U. liberou a máquina após passar 34 minutos on-line
+Adolescente #K. está on-line
+Adolescente #Z. liberou a máquina após passar 109 minutos on-line
+Adolescente #R. está on-line
+Adolescente #Q. liberou a máquina após passar 63 minutos on-line
+Adolescente #P. está on-line
+Adolescente #C. liberou a máquina após passar 56 minutos on-line
+Adolescente #B. está on-line
+Adolescente #V. liberou a máquina após passar 69 minutos on-line
+Adolescente #J. liberou a máquina após passar 62 minutos on-line
+Adolescente #P. liberou a máquina após passar 44 minutos on-line
+Adolescente #N. liberou a máquina após passar 84 minutos on-line
+Adolescente #R. liberou a máquina após passar 80 minutos on-line
+Adolescente #K. liberou a máquina após passar 94 minutos on-line
+Adolescente #B. liberou a máquina após passar 80 minutos on-line
+Adolescente #E. liberou a máquina após passar 118 minutos on-line
+
+A lan-house está finalmente vazia e todos foram atendidos
