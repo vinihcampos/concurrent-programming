@@ -6,7 +6,7 @@ This work analyzes the processing time of sequential and parallel algorithms for
 
 ### Prerequisites
 
-To compiling the project, it's needed to install CMake 
+To compile the project, it's needed to install CMake 
 
 ```
 sudo apt-get install cmake

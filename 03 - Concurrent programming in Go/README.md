@@ -6,7 +6,7 @@ This work solves the problem of management a *lanhouse*, which has 8 computers, 
 
 ### Prerequisites
 
-To using this project, it's needed to install the [Golang](https://golang.org/dl/).
+To use this project, it's needed to install the [Golang](https://golang.org/dl/).
 
 ## Running the tests
 
